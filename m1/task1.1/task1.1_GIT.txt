@@ -1,0 +1,20 @@
+$ git reflog
+dc7b029 (HEAD -> master, origin/master, origin/develop, develop) HEAD@{0}: merge develop: Fast-forward
+7872df6 HEAD@{1}: checkout: moving from develop to master
+dc7b029 (HEAD -> master, origin/master, origin/develop, develop) HEAD@{2}: commit (merge): Merge styles into develop branch
+c3246d0 (origin/images, images) HEAD@{3}: merge images: Fast-forward
+87685b0 HEAD@{4}: checkout: moving from styles to develop
+ad3c8ba (origin/styles, styles) HEAD@{5}: checkout: moving from develop to styles
+87685b0 HEAD@{6}: checkout: moving from styles to develop
+ad3c8ba (origin/styles, styles) HEAD@{7}: commit: Index.html modified
+1cae71d HEAD@{8}: checkout: moving from images to styles
+c3246d0 (origin/images, images) HEAD@{9}: checkout: moving from styles to images
+1cae71d HEAD@{10}: commit: Styles folder and source added
+87685b0 HEAD@{11}: checkout: moving from develop to styles
+87685b0 HEAD@{12}: checkout: moving from images to develop
+c3246d0 (origin/images, images) HEAD@{13}: commit: Images sources added to index.html
+2fb8c4f HEAD@{14}: commit: Images folder added
+87685b0 HEAD@{15}: checkout: moving from develop to images
+87685b0 HEAD@{16}: commit: Index fie created
+7872df6 HEAD@{17}: checkout: moving from master to develop
+7872df6 HEAD@{18}: commit (initial): Initial commit
