@@ -5,20 +5,20 @@ During the execution of **task 1.1** the concepts and basic principles of operat
   2. Work with the **Git** command line.
   3. **Git** basic settings.
   4. Repositories creating.
-  5. Work with branches:
-    * Creating branches (branch "develop"):  
-    ![Screen1](./task_images/Screenshot_1.png)
-    * Branching - the "develop" branch was divided into two: "images" and "styles", in which work was carried out and files modifications took place:  
-    ![Screen2](./task_images/Screenshot_3.png)
-    * Merging branches - merge developments from two independent branches "images" and "styles" into a "develop" branch:  
-    ![Screen3](./task_images/Screenshot_4.png)
-    * Resolution of merge conflicts that occur in case of discrepancy of files with the same name, which were modified in parallel branches:  
-    ![Screen4](./task_images/Screenshot_5.png)
+  5. Work with branches:  
+    5.1. Creating branches (branch "develop"):  
+    ![Screen1](./task_images/Screenshot_1.png)  
+    5.2. Branching - the "develop" branch was divided into two: "images" and "styles", in which work was carried out and files modifications took place:  
+    ![Screen2](./task_images/Screenshot_3.png)  
+    5.3. Merging branches - merge developments from two independent branches "images" and "styles" into a "develop" branch:  
+    ![Screen3](./task_images/Screenshot_4.png)  
+    5.4 Resolution of merge conflicts that occur in case of discrepancy of files with the same name, which were modified in parallel branches:  
+    ![Screen4](./task_images/Screenshot_5.png)  
   6. Work with remote repositories (**Github**):  
-  ![Screen5](./task_images/Screenshot_7.png)
+  ![Screen5](./task_images/Screenshot_7.png)  
   7. Work with tools for viewing history and analysis in **Git** (log, reflog, diff):  
-  ![Screen6](./task_images/Screenshot_6.png)
-  8. Work with **Markdown** markup language.
+  ![Screen6](./task_images/Screenshot_6.png)  
+  8. Work with **Markdown** markup language.  
 
 
-  DevOps - is a bit from each of the stages of the software development cycle, a set of practices that allow all its processes to be  more flexible and efficient.
+  DevOps - is a bit from each of the stages of the software development cycle, a set of practices that allow all its processes to be more flexible and efficient.
