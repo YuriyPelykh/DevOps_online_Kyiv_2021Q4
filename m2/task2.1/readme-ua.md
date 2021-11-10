@@ -77,4 +77,6 @@
   ![Screen12](./task_images/Screenshot_12.png)  
   - Створення власних "боксів" Vagrant:  
   ![Screen13](./task_images/Screenshot_13.png)  
-  - Створення тестових середовищ із кількох серверів за допомогою Vagrant.  
+  - Створення тестових середовищ із кількох серверів за допомогою Vagrant:  
+  ![Screen14](./task_images/Screenshot_14.png)  
+  ![Screen15](./task_images/Screenshot_15.png)  

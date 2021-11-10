@@ -77,4 +77,6 @@
   ![Screen12](./task_images/Screenshot_12.png)  
   - Creating your own Vagrant boxes:  
   ![Screen13](./task_images/Screenshot_13.png)  
-  - Creating test environments from multiple servers using Vagrant.  
+  - Creating test environments from few servers using Vagrant:  
+  ![Screen14](./task_images/Screenshot_14.png)  
+  ![Screen15](./task_images/Screenshot_15.png)  
