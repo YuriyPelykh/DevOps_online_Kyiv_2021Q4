@@ -71,3 +71,11 @@
   ![Screen10](./task_images/Screenshot_10.png)  
 
 ## Частина ІII. Робота з Vagrant:  
+ Здобуто практичні навички роботи з Vagrant:
+  - Розгортання віртуальних машин за допомогою Vagrant із готових "боксів" (box) Vagrant:
+  ![Screen11](./task_images/Screenshot_11.png)  
+  ![Screen12](./task_images/Screenshot_12.png)  
+  - Створення власних "боксів" Vagrant:  
+  ![Screen13](./task_images/Screenshot_13.png)  
+  - Створення тестових середовищ із кількох серверів за допомогою Vagrant:  
+  
