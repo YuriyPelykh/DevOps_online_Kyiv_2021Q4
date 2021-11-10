@@ -47,7 +47,7 @@
   - Creating VM snapshots:  
   ![Screen3](./task_images/Screenshot_3.png)
   - Export VM to file and import from it.
-  >! When exporting a VM to a file, only the current state of the machine without the image tree is saved.  
+  >! When exporting a VM to a file, only the current state of the machine without the snapshots tree is saved.  
 
 ### 2. Configuration of virtual machines  
   - The general parameters of VM configuration were learnt.  
