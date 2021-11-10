@@ -63,7 +63,7 @@
    - Internal network - only VMs are visible to each other:  
    ![Screen8](./task_images/Screenshot_8.png)  
    - Virtual host adapter - access is only from the VM to the Internet.  
-   The general scheme of connections has the form:  
+   The general scheme of connections is:  
    ![Screen9](./task_images/Screenshot_9.png)  
 
 ### 3. Working with VirtualBox via the command line (CLI):  
@@ -75,6 +75,6 @@
   - Deployment of virtual machines using Vagrant from ready boxes:  
   ![Screen11](./task_images/Screenshot_11.png)  
   ![Screen12](./task_images/Screenshot_12.png)  
-  - Creating your own "boxes" Vagrant:  
+  - Creating your own Vagrant boxes:  
   ![Screen13](./task_images/Screenshot_13.png)  
   - Creating test environments from multiple servers using Vagrant.  
