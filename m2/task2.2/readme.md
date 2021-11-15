@@ -37,11 +37,11 @@
   - Possibilities of creating own domain and domain name using the AWS-service Route53 have been explored.  
   - Work with Docker:  
      - Installing Docker, create and run own images from Dockerfile:  
-     <center>![Screen16](./task_images/Screenshot_16.png) </center>  
+     ![Screen16](./task_images/Screenshot_16.png)  
      - Work with Amazon Elastic Container Service (ECS), Amazon Elastic Container Registry (ECR):  
        - creating an ECR repository and loading the created image into it:  
-       <center>![Screen17](./task_images/Screenshot_17.png) </center>  
+       ![Screen17](./task_images/Screenshot_17.png)  
        - creation of clusters and deployment of the image on ECS.  
-       <center>![Screen18](./ task_images / Screenshot_18.png)  </center>  
+       ![Screen18](./task_images/Screenshot_18.png)  
    - Created a static web-site on Amazone S3:  
      http://pelykh-bucket1.s3-website.eu-central-1.amazonaws.com/  
