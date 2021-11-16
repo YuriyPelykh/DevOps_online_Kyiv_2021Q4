@@ -36,12 +36,15 @@
     ![Screen15](./task_images/Screenshot_15.png)  
   - Досліджено можливості створення власного домену і доменного імені за допомогою AWS-сервісу Route53.  
   - Робота з Docker:  
-    - Встановлення Docker, створення і запуск власних образів із Dockerfile:  
-    <center>![Screen16](./task_images/Screenshot_16.png)  </center>  
+    - Встановлення Docker, створення і запуск власних образів із Dockerfile (розгорнуто apache, index.html відображає "Hello World!"):  
+    ![Screen16](./task_images/Screenshot_16.png)  
+    ![Screen16b](./task_images/Screenshot_16b.png)  
     - Робота з Amazon Elastic Container Service (ECS), Amazon Elastic Container Registry (ECR):  
-      - створення репозиторію ECR та завантаження в нього (push) створеного образу:  
-      <center>![Screen17](./task_images/Screenshot_17.png)  </center>  
-      - створення кластерів та розгортання образу на ECS.  
-      <center>![Screen18](./task_images/Screenshot_18.png)  </center>  
+      - створення репозиторію ECR та завантаження в нього (push) створеного образу (hello-world):  
+      ![Screen17](./task_images/Screenshot_17.png)  
+      - створення кластерів та розгортання створеного образу на ECS:  
+      ![Screen18](./task_images/Screenshot_18.png)  
+      ![Screen19](./task_images/Screenshot_19.png)  
+      ![Screen20](./task_images/Screenshot_20.png)  
   - Створення статичного web-cайту на Amazone S3:  
-    http://pelykh-bucket1.s3-website.eu-central-1.amazonaws.com/
+    http://pelykh-bucket1.s3-website.eu-central-1.amazonaws.com/  
