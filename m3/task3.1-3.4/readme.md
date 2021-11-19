@@ -12,7 +12,7 @@
  Sender's TCP port: 64087  
  Recipient's TCP port: 34567  
 
-# Task 3.2. Connecting individual networks with Internet and VLAN  
+# Task 3.2. Connecting seperate networks with Internet and VLAN  
  - Simulated Internet connection between previously created network segments:  
  ![Screen3](./task_images/Screenshot_3.png)  
  - Checked the connection of computers with their own gateways:  
