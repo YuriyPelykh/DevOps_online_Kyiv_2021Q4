@@ -1,4 +1,4 @@
-# Завдання 3.1  
+# Завдання 3.1. Створення мереж Home Office, Enterprise, Data Center  
  Під час виконання завдання було:  
  - закріплено знання з статичної ІР-адресації,  
  - побудовано окремі сегменти тестової мережі в емуляторі Cisco Packet Tracer, присвоєно статичні ІР-адреси пристроям та протестовано зв'язки між ними в рамках кожного сегменту:  
@@ -13,7 +13,7 @@
  TCP-порт отримувача: 34567  
 
 
-# Завдання 3.2  
+# Завдання 3.2. З’єднання окремих мереж за допомогою мережі Internet та налаштування VLAN  
  - Змодельовано з'єднання Internet між раніше створеними сегментами мережі:
  ![Screen3](./task_images/Screenshot_3.png)  
  - Перевірено зв'язок комп’ютерів з власними шлюзами:  
@@ -24,37 +24,37 @@
  ![Screen6](./task_images/Screenshot_6.png)  
  - Виконано налаштування VLAN на портах комутатора Switch2 (access):  
 
- >Switch2(config)#interface FastEthernet0/2
- >Switch2(config-if)#switchport access vlan 2
- >Switch2(config-if)#exit
- >Switch2(config)#interface FastEthernet0/3
- >Switch2(config-if)#switchport access vlan 3
- >Switch2(config-if)#exit
- >Switch2(config)#interface FastEthernet0/4
- >Switch2(config-if)#switchport access vlan 4
+ >Switch2(config)#interface FastEthernet0/2  
+ >Switch2(config-if)#switchport access vlan 2  
+ >Switch2(config-if)#exit  
+ >Switch2(config)#interface FastEthernet0/3  
+ >Switch2(config-if)#switchport access vlan 3  
+ >Switch2(config-if)#exit  
+ >Switch2(config)#interface FastEthernet0/4  
+ >Switch2(config-if)#switchport access vlan 4  
  >Switch2(config-if)#exit  
 
  Сервери ДЦ все так же лишились недоступними один для одного, оскільки назначення портів на комутатрі Switch2 у різні VLAN лише посилило ступінь їхньої ізоляції. Для організації доступності між собою потрібне конфігурування маршрутизації між VLAN на маршрутизаторі Router ISP3.  
  ![Screen7](./task_images/Screenshot_7.png)  
  - Налаштування маршрутизації між VLAN (додаткове завдання), маршрутизатор Router ISP3:  
 
- >Router-ISP3(config)#interface GigabitEthernet0/0.2
- >Router-ISP3(config-subif)#encapsulation dot1Q 2
- >Router-ISP3(config-subif)#ip address 4.2.89.1 255.255.255.192
- >Router-ISP3(config-subif)#exit
- >Router-ISP3(config)#interface GigabitEthernet0/0.3
- >Router-ISP3(config-subif)#encapsulation dot1Q 3
- >Router-ISP3(config-subif)#ip address 4.2.89.65 255.255.255.192
- >Router-ISP3(config-subif)#exit
- >Router-ISP3(config)#interface GigabitEthernet0/0.4
- >Router-ISP3(config-subif)#encapsulation dot1Q 4
- >Router-ISP3(config-subif)#ip address 4.2.89.129 255.255.255.192
- >Router-ISP3(config-subif)#exit
+ >Router-ISP3(config)#interface GigabitEthernet0/0.2  
+ >Router-ISP3(config-subif)#encapsulation dot1Q 2  
+ >Router-ISP3(config-subif)#ip address 4.2.89.1 255.255.255.192  
+ >Router-ISP3(config-subif)#exit  
+ >Router-ISP3(config)#interface GigabitEthernet0/0.3  
+ >Router-ISP3(config-subif)#encapsulation dot1Q 3  
+ >Router-ISP3(config-subif)#ip address 4.2.89.65 255.255.255.192  
+ >Router-ISP3(config-subif)#exit  
+ >Router-ISP3(config)#interface GigabitEthernet0/0.4  
+ >Router-ISP3(config-subif)#encapsulation dot1Q 4  
+ >Router-ISP3(config-subif)#ip address 4.2.89.129 255.255.255.192  
+ >Router-ISP3(config-subif)#exit  
 
  Після цього сервери отримали можливість пінгувати один одного:  
  ![Screen8](./task_images/Screenshot_8.png)  
 
-# Завдання 3.3  
+# Завдання 3.3. Налаштування маршрутизації  
  - Виконано налаштування статичної маршрутизації у змодельованій мережі:  
  >Router-ISP2(config)#ip route 10.89.2.0 255.255.255.0 12.4.89.1  
  >Router-ISP2(config)#ip route 4.2.89.0 255.255.255.0 12.4.89.129  
@@ -68,21 +68,35 @@
  >Router-ISP3(config)#ip route 10.89.2.0 255.255.255.0 12.4.89.65  
  >Router-ISP3(config)#ip route 12.4.89.0 255.255.255.192 12.4.89.130  
 
-Отримано повну доступність усіх хостів мережі з усіма:  
-![Screen9](./task_images/Screenshot_9.png)  
+ Отримано повну доступність усіх хостів мережі з усіма:  
+ ![Screen9](./task_images/Screenshot_9.png)  
 
-- Налаштування динамічної маршрутизації на базі протоколу RIP (додаткове завдання):  
+ - Налаштування динамічної маршрутизації на базі протоколу RIP (додаткове завдання):  
 
->Router-ISP2(config)#router rip  
->Router-ISP2(config-router)#network 12.0.0.0  
->  
->Router-ISP1(config)#router rip  
->Router-ISP1(config-router)#network 10.0.0.0
->Router-ISP1(config-router)#network 12.0.0.0
->  
->Router(config)#router rip  
->Router(config-router)#network 12.0.0.0  
->Router(config-router)#network 4.0.0.0  
+ >Router-ISP2(config)#router rip  
+ >Router-ISP2(config-router)#network 12.0.0.0  
+ >  
+ >Router-ISP1(config)#router rip  
+ >Router-ISP1(config-router)#network 10.0.0.0  
+ >Router-ISP1(config-router)#network 12.0.0.0  
+ >  
+ >Router(config)#router rip  
+ >Router(config-router)#network 12.0.0.0  
+ >Router(config-router)#network 4.0.0.0  
 
-Отримано повну доступність усіх хостів мережі з усіма:  
-![Screen10](./task_images/Screenshot_10.png)  
+ Отримано повну доступність усіх хостів мережі з усіма:  
+ ![Screen10](./task_images/Screenshot_10.png)  
+
+# Завдання 3.4. Налаштування DHCP, DNS, NAT  
+ - Налаштування DHCP Server в Enterprise мережі:  
+ ![Screen11](./task_images/Screenshot_11.png)  
+ - Клієнти Enterprise мережі отримали ІР параметри за DHCP:  
+ ![Screen12](./task_images/Screenshot_12.png)  
+ - Налаштування DNS Server:  
+ ![Screen13](./task_images/Screenshot_13.png)  
+ Перевірка роботи DNS:  
+ ![Screen14](./task_images/Screenshot_14.png)  
+ - Налаштування Port Forwarding на Home Router (додаткове завдання):  
+ ![Screen15](./task_images/Screenshot_15.png)  
+ Перевірка роботи "прокинутого" порта:  
+ ![Screen16](./task_images/Screenshot_16.png)  
