@@ -12,14 +12,14 @@
  Sender's TCP port: 64087  
  Recipient's TCP port: 34567  
 
-# Task 3.2. Connecting seperate networks with Internet and VLAN  
+# Task 3.2. Connecting separate networks with Internet and VLAN  
  - Simulated Internet connection between previously created network segments:  
  ![Screen3](./task_images/Screenshot_3.png)  
  - Checked the connection of computers with their own gateways:  
  ![Screen4](./task_images/Screenshot_4.png)  
  - Communication of servers in the Data Center with each other:  
  ![Screen5](./task_images/Screenshot_5.png)  
- - If change the mask on the servers from 255.255.255.0 to 255.255.255.192, the connection will be lost, because the servers got thus following IP parameters: 4.2.89.50/26, 4.2.89.100/26, 4.2.89.150/26 - so them already will belong to different subnets, about which no information is contained either in the routing tables of the servers themselves, or in the routing table of ISP3 router, which is their default gateway:  
+ - If change the mask on the servers from 255.255.255.0 to 255.255.255.192, the connection will be lost, because the servers got thus following IP parameters: 4.2.89.50/26, 4.2.89.100/26, 4.2.89.150/26 - so them will belong to different subnets, about which no information is contained either in the routing tables of the servers themselves, or in the routing table of ISP3 router, which is their default gateway:  
  ![Screen6](./task_images/Screenshot_6.png)  
  - VLAN configuration on Switch2 (access) ports:  
 
