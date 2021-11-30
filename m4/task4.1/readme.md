@@ -30,3 +30,12 @@
  ![Screen12](./task_images/Screenshot_12.png)  
 
 ## Part 3  
+ - Creating Amazon DynamoDB (NoSQL-DB) tables:  
+   - via DynamoDB Management Console.  
+   - via CLI:  
+   ![Screen13](./task_images/Screenshot_13.png)  
+ - Filling DynamoDB tables:  
+ ![Screen14](./task_images/Screenshot_14.png)  
+ - Execution of queries to Amazon DynamoDB tables (Query and Scan):  
+ ![Screen15](./task_images/Screenshot_15.png)  
+ ![Screen16](./task_images/Screenshot_16.png)  

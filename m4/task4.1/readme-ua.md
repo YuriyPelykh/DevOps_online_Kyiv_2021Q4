@@ -9,7 +9,7 @@
   ![Screen1](./task_images/Screenshot_1.png)  
   - Наповнення таблиць командою INSERT:  
   ![Screen2](./task_images/Screenshot_2.png)  
-  - Виконання запитів до БД за допомогою оператора SELECT та WHERE, GROUP BY і ORDER BY:  
+  - Виконання запитів до БД за допомогою оператора SELECT, WHERE, GROUP BY, ORDER BY та ін.:  
   ![Screen3](./task_images/Screenshot_3.png)  
   - Створення нових користувачів бази даних, призначення їм прав:  
   ![Screen4](./task_images/Screenshot_4.png)  
@@ -30,5 +30,12 @@
  ![Screen12](./task_images/Screenshot_12.png)  
 
 ## Частина 3
-
-aws dynamodb put-item --table-name clients --item '{"client_name": {"S": "Petro Ivanenko"}, "phone_number": {"S": "0732003305"}, "address": {"S": "Berdychiv"}}' --return-consumed-capacity TOTAL
+ - Створення таблиць Amazon DynamoDB (NoSQL-DB):  
+   - через DynamoDB Management Console.  
+   - через CLI:  
+   ![Screen13](./task_images/Screenshot_13.png)  
+ - Наповнення DynamoDB-таблиць:  
+ ![Screen14](./task_images/Screenshot_14.png)  
+ - Виконання запитів до таблиць Amazon DynamoDB (Query та Scan):  
+ ![Screen15](./task_images/Screenshot_15.png)  
+ ![Screen16](./task_images/Screenshot_16.png)  

@@ -1,0 +1,49 @@
+{
+    "Music": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "Artist": {
+                        "S": "In Flames"
+                    },
+                    "SongTitle": {
+                        "S": "Scorn"
+                    },
+                    "AlbumTitle": {
+                        "S": "Colony"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "Artist": {
+                        "S": "Metallica"
+                    },
+                    "SongTitle": {
+                        "S": "Unforgiven"
+                    },
+                    "AlbumTitle": {
+                        "S": "Unforgiven"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "Artist": {
+                        "S": "Rammstein"
+                    },
+                    "SongTitle": {
+                        "S": "Sonne"
+                    },
+                    "AlbumTitle": {
+                        "S": "Mein Hertz"
+                    }
+                }
+            }
+        }
+    ]
+}
