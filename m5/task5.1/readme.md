@@ -96,12 +96,12 @@ The basics of Linux were learned, namely:
  Socket devices facilitate communication between processes, similar to pipe devices but they can communicate with many processes at once.  
  **How to determine the type of device?**  
  In the ls command we can see the type of file with the first bit on each line. Device files are denoted as the following:  
-   - c - character
-   - b - block
-   - p - pipe
-   - s - socket
+   - c - character  
+   - b - block  
+   - p - pipe  
+   - s - socket  
  ![Screen30](./task_images/Screenshot_30.png)  
- 14. How to determine the type of file in the system, what types of files are there?
+ 14. How to determine the type of file in the system, what types of files are there?  
  ![Screen31](./task_images/Screenshot_31.png)  
  Types of files:  
    - – : regular file  
