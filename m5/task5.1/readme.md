@@ -3,11 +3,11 @@
 The basics of Linux were learned, namely:  
 ## Part 1  
  1. Logging in to the system as root.  
- 2. Changing the password and examination the basic parameters of the command "passwd":  
+ 2. Changing the password and examination the basic parameters of the command **passwd**:  
  ![Screen1](./task_images/Screenshot_1.png)  
  When changing a user's password it's hash saves to the system file /etc/shadow:  
  ![Screen2](./task_images/Screenshot_2.png)  
- 3. Determination of the users registrations in the system, as well as what commands they execute with commands "who" and "w":  
+ 3. Determination of the users registrations in the system, as well as what commands they execute with commands **who** and **w**:  
  ![Screen3](./task_images/Screenshot_3.png)  
  An additional information can be gleaned from the above command execution:
    - FROM - an IP-address, which user is connected from.
@@ -17,32 +17,32 @@ The basics of Linux were learned, namely:
    - PCPU - is the time used by the current process, named in the "what" field.
  4. Changing personal information:  
  ![Screen4](./task_images/Screenshot_4.png)  
- 5. Got aquainted with the Linux help system, "man" and "info" commands. Got help on the previously discussed commands:  
+ 5. Got aquainted with the Linux help system, **man** and **info** commands. Got help on the previously discussed commands:  
  ![Screen5](./task_images/Screenshot_5.png)  
  Definition and description of any two keys for these commands:  
-   - w: -s, --short - Using of the short format.  Don't print the login time, JCPU or PCPU times.  
-   - w: -h, --no-header - Don't print the header.  
- 6. Exploration of the "more" and "less" commands using the help system. View the contents of files .bash* using commands:  
+   - w: **-s**, --short - Using of the short format.  Don't print the login time, JCPU or PCPU times.  
+   - w: **-h**, --no-header - Don't print the header.  
+ 6. Exploration of the **more** and **less** commands using the help system. View the contents of files .bash* using commands:  
  ![Screen6](./task_images/Screenshot_6.png)  
  7. *Description in plans that you are working on laboratory work 1. (Tip: You should read the documentation for the finger command):  
  ![Screen7](./task_images/Screenshot_7.png)  
- 8. *Listing the contents of the home directory using the ls command, definition its files and directories. (Hint: Use the help system to familiarize yourself with the ls command):  
+ 8. Listing the contents of the home directory using the **ls** command, definition its files and directories. (Hint: Use the help system to familiarize yourself with the ls command):  
  ![Screen8](./task_images/Screenshot_8.png)  
 
 ## Part 2  
 
- 1. Examination of the tree command. Testing of applying a template, for example, display all files that contain a character c, or files that contain a specific sequence of characters. List subdirectories of the root directory up to and including the second nesting level.  
+ 1. Examination of the **tree** command. Testing of applying a template, for example, display all files that contain a character "c", or files that contain a specific sequence of characters. List subdirectories of the root directory up to and including the second nesting level.  
  ![Screen9](./task_images/Screenshot_9.png)  
- 2. Command "file" can be used to determine the type of file (for example, text or binary):  
+ 2. Command **file** can be used to determine the type of file (for example, text or binary):  
  ![Screen10](./task_images/Screenshot_10.png)  
  3. Improving the skills of navigating the file system using relative and absolute paths. Using symbol '~' we can go back to home directory from anywhere in the filesystem:  
  ![Screen11](./task_images/Screenshot_11.png)  
- 4. Consolidation of knowledges about various options for the ls command. Examples of listing directories using different keys are below:  
+ 4. Consolidation of knowledges about various options for the **ls** command. Examples of listing directories using different keys are below:  
  ![Screen12](./task_images/Screenshot_12.png)  
  Using the switches:  
- -l - for list presentation of directory content;  
- -a - displays all content of a directory including hidden files and current and parent directories (. and ..);  
- -h - human readable file sizes.  
+ **-l** - for list presentation of directory content;  
+ **-a** - displays all content of a directory including hidden files and current and parent directories (. and ..);  
+ **-h** - human readable file sizes.  
  5. Performed the following sequence of operations:  
    - creation of a subdirectory in the home directory:  
    ![Screen13](./task_images/Screenshot_13.png)  
