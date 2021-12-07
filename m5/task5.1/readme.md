@@ -80,7 +80,6 @@ The basics of Linux were learned, namely:
  11. List all objects in /etc that contain the "ss" character sequence. How can I duplicate a similar command using a bunch of grep?  
    - Looking in object names:  
    ![Screen25](./task_images/Screenshot_25.png)  
-   ![Screen26](./task_images/Screenshot_26.png)  
    - Looking in files content:  
    ![Screen27](./task_images/Screenshot_27.png)  
    ![Screen28](./task_images/Screenshot_28.png)  
@@ -97,21 +96,21 @@ The basics of Linux were learned, namely:
  Socket devices facilitate communication between processes, similar to pipe devices but they can communicate with many processes at once.  
  **How to determine the type of device?**  
  In the ls command we can see the type of file with the first bit on each line. Device files are denoted as the following:  
-   1. c - character
-   2. b - block
-   3. p - pipe
-   4. s - socket
+   - c - character
+   - b - block
+   - p - pipe
+   - s - socket
  ![Screen30](./task_images/Screenshot_30.png)  
  14. How to determine the type of file in the system, what types of files are there?
  ![Screen31](./task_images/Screenshot_31.png)  
  Types of files:  
-   1. – : regular file  
-   2. d : directory  
-   3. c : character device file  
-   4. b : block device file  
-   5. s : local socket file  
-   6. p : named pipe  
-   7. l : symbolic link  
+   - – : regular file  
+   - d : directory  
+   - c : character device file  
+   - b : block device file  
+   - s : local socket file  
+   - p : named pipe  
+   - l : symbolic link  
  15. *List the first 5 directory files that were recently accessed in the /etc directory:  
  ![Screen32](./task_images/Screenshot_32.png)  
  ![Screen33](./task_images/Screenshot_33.png)  
