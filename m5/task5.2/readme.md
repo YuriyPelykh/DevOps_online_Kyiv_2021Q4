@@ -1,5 +1,5 @@
 
-# Tsk 5.2  
+# Task 5.2  
 
   1. Analyze the structure of the **/etc/passwd** and **/etc/group** file, what fields are present in it, what users exist on the system? Specify several pseudo-users, how to define them?  
   ![Screen1](./task_images/Screenshot_1.png)  
@@ -15,14 +15,17 @@
   **_Yurii Pelykh,6,0971530480_** - UID comments - comment, extended user description, for example, full name, office, phone;  
   **_/home/ypelykh_** - user's home directory;  
   **_/bin/bash_** - program name the user's command interpreter.    
+
   Types of users:  
    - **Root** - root user;  
    - **Regular users** - like _ypelykh_;  
    - **System users**;  
    - **Daemons**;  
    - **Pseudo-users** - are not registered in the system and are only needed to confirm ownership of the processes. Their descriptions are never edited. Examples: _sshd_, _tcpdump_, _proxy_.  
+
   File **/etc/group** contains lines of existing user groups in system:  
   ![Screen2](./task_images/Screenshot_2.png)  
+
   The format for line in this file is:  
   > adm:x:4:syslog,ypelykh  
 
@@ -30,8 +33,7 @@
   **_adm_** - group name - contains the text name for the group.  
   **_x_** - password - contains the encrypted password of this group (really password is stored in file **/etc/shadow**).  
   **_4_** - group ID - contains a unique identifier for this group.  
-  **_syslog,ypelykh_** - list field, which contains a comma separated list of users belonging to this group.  
-  Users do not need to be included in the list of those groups that are specified as their primary in the /etc/passwd file.  
+  **_syslog,ypelykh_** - list field, which contains a comma separated list of users belonging to this group.   
 
   2. What are the UID ranges? What is UID? How to define it?  
   **UID** is a simple numeric designation for an individual user. This is usually a positive number not more than 65535. Some identifiers are reserved for special use. UID-ranges are following:  
