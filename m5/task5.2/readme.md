@@ -88,13 +88,13 @@
   > drwxrwxr-x 2 ypelykh ypelykh 4.0K Dec  7 15:27 test  
   >  
 
-    - **drwxrwxr-x** - file type (directory), directory access rules,  
-    - **2** - count of links, which point to this directory (file),  
-    - **ypelykh** - owner name,  
-    - **ypelykh** - owner group,  
-    - **4.0K** - file size,  
-    - **Dec  7 15:27** - time of last modification,  
-    - **test** - the name of the file or directory.  
+    **drwxrwxr-x** - file type (directory), directory access rules,  
+    **2** - count of links, which point to this directory (file),  
+    **ypelykh** - owner name,  
+    **ypelykh** - owner group,  
+    **4.0K** - file size,  
+    **Dec  7 15:27** - time of last modification,  
+    **test** - the name of the file or directory.  
 
   12. What access rights exist and for whom (i. e., describe the main roles)? Briefly describe the acronym for access rights.  
   An access rights are defined for:  
@@ -123,12 +123,12 @@
 
   15. What is an example of octal representation of access rights? Describe the umask command.  
   For example, access rights acronym **rwxrwxr-x** can be interpreted in octal form as **775**:  
-    - r - is for 4,  
-    - w - is for 2,
-    - x - is for 1.
-  So **rwx** for owner gives 4+2+1=**7**, **rwx** for group gives also 4+2+1=**7**, **r-x** for others gives 4+0+1=**5**.
+   - r - is for 4,  
+   - w - is for 2,  
+   - x - is for 1.  
+  So **rwx** for owner gives 4+2+1=**7**, **rwx** for group gives also 4+2+1=**7**, **r-x** for others gives 4+0+1=**5**.  
 
-  **umask** utility gives possibility to change default permissions to newly created files and directories.
+  **umask** utility gives possibility to change default permissions for newly created files and directories.  
   ![Screen13](./task_images/Screenshot_13.png)  
   This **umask** value _0002_ contains permissions bits that will NOT be set on newly created files and directories.  
   **umask** affects only the current shell environment. On most Linux distributions, the default system-wide **umask** is set in the **pam_umask.so** or **/etc/profile file**. To specify a different value for each user, we can edit the user's shell configuration files such as **~/.bashrc** or **~/.zshrc**. Also possible to change the current **umask** value of the session by running _**umask**_ with the next desired value.  
