@@ -126,12 +126,12 @@
    - r - is for 4,  
    - w - is for 2,  
    - x - is for 1.  
-  So **rwx** for owner gives 4+2+1=**7**, **rwx** for group gives also 4+2+1=**7**, **r-x** for others gives 4+0+1=**5**.  
+   So **rwx** for owner gives 4+2+1=**7**, **rwx** for group gives also 4+2+1=**7**, **r-x** for others gives 4+0+1=**5**.  
 
-  **umask** utility gives possibility to change default permissions for newly created files and directories.  
-  ![Screen13](./task_images/Screenshot_13.png)  
-  This **umask** value _0002_ contains permissions bits that will NOT be set on newly created files and directories.  
-  **umask** affects only the current shell environment. On most Linux distributions, the default system-wide **umask** is set in the **pam_umask.so** or **/etc/profile file**. To specify a different value for each user, we can edit the user's shell configuration files such as **~/.bashrc** or **~/.zshrc**. Also possible to change the current **umask** value of the session by running _**umask**_ with the next desired value.  
+    **umask** utility gives possibility to change default permissions for newly created files and directories.  
+    ![Screen13](./task_images/Screenshot_13.png)  
+    This **umask** value _0002_ contains permissions bits that will NOT be set on newly created files and directories.  
+    **umask** affects only the current shell environment. On most Linux distributions, the default system-wide **umask** is set in the **pam_umask.so** or **/etc/profile file**. To specify a different value for each user, we can edit the user's shell configuration files such as **~/.bashrc** or **~/.zshrc**. Also possible to change the current **umask** value of the session by running _**umask**_ with the next desired value.  
 
   16. Give definitions of sticky bits and mechanism of identifier substitution. Give an example of files and directories with these attributes.  
   **Sticky bit** is mainly used on folders in order to avoid deletion of a folder and it’s content by other users though they having write permissions on the folder contents. If Sticky bit is enabled on a folder, the folder contents are deleted by only owner who created them and the root user.  
