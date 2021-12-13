@@ -107,14 +107,40 @@
   If needed to start a process and exit the console so that the process continues to run on the system, there is only one way out - to transfer the child process to another process, which will be its parent. This feature is implemented in the **nohup** command. This command allows to start processes that will be disconnected from the terminal if the terminal is closed.
 
 ## Part 2
-  1. Check the implementability of the most frequently used OPENSSH commands in the MS Windows operating system. (Description of the expected result of the commands + screenshots: command – result should be presented)
-  **ssh user@host** - connection to specified host under specified user via ssh.
+  1. Check the implementability of the most frequently used OPENSSH commands in the MS Windows operating system. (Description of the expected result of the commands + screenshots: command – result should be presented).  
+  **ssh user@host** - connection to specified host under specified user via ssh.  
   ![Screen13](./task_images/Screenshot_13.png)  
   **ssh-keygen** - generation of public/private rsa key pair:  
   ![Screen14](./task_images/Screenshot_14.png)  
 
-  2. Implement basic SSH settings to increase the security of the client-server connection (at least 3. List the options for choosing keys for encryption in SSH. Implement 3 of them.
+  2. Implement basic SSH settings to increase the security of the client-server connection (at least 3. List the options for choosing keys for encryption in SSH. Implement 3 of them.  
+    1. Configuration of connection using SSH-key instead login and password:  
+    Generated earlier (in task 2.1) public key should be shared to server into ~/.ssh/authorized_keys:  
+    >cat C:\Users\Rocca\.ssh\id_rsa.pub | ssh ypelykh@192.168.0.101 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
 
-  3. Implement port forwarding for the SSH client from the host machine to the guest Linux virtual machine behind NAT.
+    ![Screen15](./task_images/Screenshot_15.png)  
+    ![Screen16](./task_images/Screenshot_16.png)  
+    Encryption algorithms possible for SSH usage:  
+      - RSA;  
+      - DSA;  
+      - ECDSA;  
+      - ED25519.       
 
-  4. *Intercept (capture) traffic (tcpdump, wireshark) while authorizing the remote client on the server using ssh, telnet, rlogin. Analyze the result.
+    2. Changing the default 22 ssh port to other:  
+    Specification of new SSH port for listening for sshd we make in /etc/ssh/sshd_config:  
+    ![Screen17](./task_images/Screenshot_17.png)  
+    Now sshd listens to port 20022 (netstat -ntlp):  
+    ![Screen17](./task_images/Screenshot_17.png)  
+    3. Disabling of server SSH Root Login and password authentication:  
+    >/etc/ssh/sshd_config:  
+    >PasswordAuthentication no  
+    >PermitRootLogin no  
+
+    ![Screen19](./task_images/Screenshot_19.png)  
+
+  3. Implement port forwarding for the SSH client from the host machine to the guest Linux virtual machine behind NAT.  
+  ![Screen20](./task_images/Screenshot_20.png)  
+  ![Screen21](./task_images/Screenshot_21.png)  
+  ![Screen22](./task_images/Screenshot_22.png)  
+
+  4. *Intercept (capture) traffic (tcpdump, wireshark) while authorizing the remote client on the server using ssh, telnet, rlogin. Analyze the result.  
