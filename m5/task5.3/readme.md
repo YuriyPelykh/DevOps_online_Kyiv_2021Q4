@@ -121,10 +121,10 @@
     ![Screen15](./task_images/Screenshot_15.png)  
     ![Screen16](./task_images/Screenshot_16.png)  
     Encryption algorithms possible for SSH usage:  
-      - RSA;  
-      - DSA;  
-      - ECDSA;  
-      - ED25519.       
+     - RSA;  
+     - DSA;  
+     - ECDSA;  
+     - ED25519.       
 
     2. Changing the default 22 ssh port to other:  
     Specification of new SSH port for listening for sshd we make in /etc/ssh/sshd_config:  
@@ -144,3 +144,6 @@
   ![Screen22](./task_images/Screenshot_22.png)  
 
   4. *Intercept (capture) traffic (tcpdump, wireshark) while authorizing the remote client on the server using ssh, telnet, rlogin. Analyze the result.  
+  ![Screen20](./task_images/Screenshot_23.png)  
+  ![Screen20](./task_images/Screenshot_24.png)  
+  Main difference between dumps of connections via ssh and for example telnet is in data encryption during SSH transmission, while it is absent during telnet session packets exchange.
