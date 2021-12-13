@@ -116,8 +116,7 @@
   2. Implement basic SSH settings to increase the security of the client-server connection (at least 3. List the options for choosing keys for encryption in SSH. Implement 3 of them.  
     1. Configuration of connection using SSH-key instead login and password:  
     Generated earlier (in task 2.1) public key should be shared to server into ~/.ssh/authorized_keys:  
-    >cat C:\Users\Rocca\.ssh\id_rsa.pub | ssh ypelykh@192.168.0.101 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
-
+    **cat C:\Users\Rocca\.ssh\id_rsa.pub | ssh ypelykh@192.168.0.101 "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"**
     ![Screen15](./task_images/Screenshot_15.png)  
     ![Screen16](./task_images/Screenshot_16.png)  
     Encryption algorithms possible for SSH usage:  
@@ -125,13 +124,13 @@
      - DSA;  
      - ECDSA;  
      - ED25519.       
-
     2. Changing the default 22 ssh port to other:  
     Specification of new SSH port for listening for sshd we make in /etc/ssh/sshd_config:  
     ![Screen17](./task_images/Screenshot_17.png)  
     Now sshd listens to port 20022 (netstat -ntlp):  
     ![Screen17](./task_images/Screenshot_17.png)  
     3. Disabling of server SSH Root Login and password authentication:  
+
     >/etc/ssh/sshd_config:  
     >PasswordAuthentication no  
     >PermitRootLogin no  
