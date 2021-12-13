@@ -131,9 +131,9 @@
     ![Screen17](./task_images/Screenshot_17.png)  
     3. Disabling of server SSH Root Login and password authentication:  
 
-    >/etc/ssh/sshd_config:  
-    >PasswordAuthentication no  
-    >PermitRootLogin no  
+    /etc/ssh/sshd_config:  
+    PasswordAuthentication no  
+    PermitRootLogin no  
 
     ![Screen19](./task_images/Screenshot_19.png)  
 
