@@ -46,8 +46,7 @@
       Result config:  
       ![Screen7](./task_images/Screenshot_7.png)  
       - Also enebled IPv4 forwarding in **/etc/sysctl.conf**:  
-      ![Screen8](./task_images/Screenshot_8.png)  
-
+      ![Screen8](./task_images/Screenshot_8.png)    
     2. **VM2:**  
      - Configuring a network interface via netplan settings config file:  
      ![Screen9](./task_images/Screenshot_9.png)  
