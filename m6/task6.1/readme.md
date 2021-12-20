@@ -1,4 +1,4 @@
-# Task 5.3 Networking with Linux  
+# Task 6.1 Networking with Linux  
 
   1. Testing virtual network was configured as shown on the figure 1:  
   ![Screen1](./task_images/Screenshot_1.png)  
@@ -49,7 +49,7 @@
       ![Screen8](./task_images/Screenshot_8.png)  
 
     2. **VM2:**  
-    
+
      - Configuring a network interface via netplan settings config file:  
      ![Screen9](./task_images/Screenshot_9.png)  
      **sudo netplan apply** then.  
