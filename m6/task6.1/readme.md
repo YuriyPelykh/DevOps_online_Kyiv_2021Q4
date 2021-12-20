@@ -43,18 +43,17 @@
          **iptables -P INPUT DROP**  
          **iptables -P FORWARD DROP**  
          **iptables -P OUTPUT ACCEPT**  
-
       Result config:  
       ![Screen7](./task_images/Screenshot_7.png)  
       - Also enebled IPv4 forwarding in **/etc/sysctl.conf**:  
       ![Screen8](./task_images/Screenshot_8.png)  
 
     2. **VM2:**  
-      - Configuring a network interface via netplan settings config file:  
-      ![Screen9](./task_images/Screenshot_9.png)  
-      **sudo netplan apply** then.  
-      - Result network interfaces configuration:  
-      ![Screen10](./task_images/Screenshot_10.png)  
+     - Configuring a network interface via netplan settings config file:  
+     ![Screen9](./task_images/Screenshot_9.png)  
+     **sudo netplan apply** then.  
+     - Result network interfaces configuration:  
+     ![Screen10](./task_images/Screenshot_10.png)  
 
   3. Check the route from VM2 to Host:  
   ![Screen11](./task_images/Screenshot_11.png)  
@@ -83,5 +82,5 @@
   ![Screen19](./task_images/Screenshot_19.png)  
 
   8. Trace the route to google.com:  
-  ![Screen20](./task_images/Screenshot_.png)  
-  ![Screen19](./task_images/Screenshot_19.png)  
+  ![Screen20](./task_images/Screenshot_20.png)  
+  ![Screen19](./task_images/Screenshot_21.png)  
