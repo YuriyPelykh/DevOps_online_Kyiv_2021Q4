@@ -33,7 +33,7 @@ VM1 has NAT and internal network connections, VM2 and VM3 – internal only inte
  ![Screen12](./task_images/Screenshot_12.png)  
 
 4. Using existed network for three VMs (from p.1) install and configure DNS server on VM1. (You can use DNSMASQ, BIND9 or something else).  
- - **DNSMASQ** was used to configurate DNS:  
+ - **DNSMASQ** was used to configure DNS:  
  ![Screen13](./task_images/Screenshot_13.png)  
  - Separate file resolv.dnsmasq.conf was created, because original symbolic link (_**resolv.conf -> ../run/systemd/resolve/stub-resolv.conf**_) becomes unworking after service **systemd-resolved** was disabled and OS reboot:  
  ![Screen13a](./task_images/Screenshot_13a.png)  
@@ -47,11 +47,41 @@ VM1 has NAT and internal network connections, VM2 and VM3 – internal only inte
  - **VM3:**  
  ![Screen16](./task_images/Screenshot_16.png)  
 
-6. * Using the scheme which follows, configure dynamic routing using OSPF protocol:  
- - Quagga installed, enabled. Ospfd enabled, all other services (protocols bgpd, ripd, isisd etc.) disabled.
+6. Using the scheme which follows, configure dynamic routing using OSPF protocol:  
+ ![Screen](./task_images/ospf.png)  
+ **VM1**:  
+ - **Quagga** installed, enabled. **Ospfd** enabled, all other services (protocol daemons like **bgpd**, **ripd**, **isisd** etc.) disabled. Log directory and log files created, rights configured (3):  
+ ![Screen17](./task_images/Screenshot_17.png)  
+ - **/etc/sysctl.conf** configuration made, as described in (4):  
+ ![Screen18](./task_images/Screenshot_18.png)  
+ - **/etc/quagga/zebra.conf** configuration made, as described in (4):  
+ ![Screen19](./task_images/Screenshot_19.png)  
+ - Further configuration of **ospfd** (**/etc/quagga/ospfd.conf**) made according to (5) via **ospf** CLI:  
+ ![Screen20](./task_images/Screenshot_20.png)  
+
+ **VM3**:  
+ - **Quagga** installed, enabled. **Ospfd** enabled, all other services (protocol daemons like **bgpd**, **ripd**, **isisd** etc.) disabled. Log directory and log files created, rights configured (3) - all like on VM1.
+ - **/etc/sysctl.conf** configuration made, as described in (4) - all like on VM1.  
+ - **/etc/quagga/zebra.conf** configuration made, as described in (4):  
+ ![Screen21](./task_images/Screenshot_21.png)  
+ - Further configuration of **ospfd** (**/etc/quagga/ospfd.conf**) made according to (5) via **ospf** CLI:  
+ ![Screen22](./task_images/Screenshot_22.png)  
+
+ **Checking results:**  
+ - We can see the packet changing process between VM1 and VM3 with **tcpdump -nvi any proto ospf** command:  
+ ![Screen23](./task_images/Screenshot_23.png)  
+ - Also can see routes in VM1's routing table, which were got from VM3 via OSPF routing protocol:  
+ ![Screen24](./task_images/Screenshot_24.png)  
+ ![Screen25](./task_images/Screenshot_25.png)  
+
+ **P.S.:**  
+ To avoid situation of two default routes in VM3's routing table, adding of **redistribute connected** instead **default-information originate** in the **/etc/quagga/ospfd.conf** on VM1 to notify neighbors about connected networks only and don't transmit as a default route:  
+ ![Screen26](./task_images/Screenshot_26.png)  
+ ![Screen27](./task_images/Screenshot_27.png)  
 
 Used sources:
-1. https://admin812.ru/ustanovka-i-nastroyka-servera-isc-dhcp-v-ubuntu-debian.html
-2. https://mnorin.com/nastrojka-dnsmasq-dhcp-dns.html
-3. https://ixnfo.com/ustanovka-quagga-v-ubuntu-server-18.html
-4. https://ixnfo.com/nastrojka-ospf-v-quagga.html
+1. https://admin812.ru/ustanovka-i-nastroyka-servera-isc-dhcp-v-ubuntu-debian.html  
+2. https://mnorin.com/nastrojka-dnsmasq-dhcp-dns.html  
+3. https://ixnfo.com/ustanovka-quagga-v-ubuntu-server-18.html  
+4. https://ixnfo.com/nastrojka-ospf-v-quagga.html  
+5. http://asmodeus.com.ua/library/nets/proto/quagga/quagga.html
