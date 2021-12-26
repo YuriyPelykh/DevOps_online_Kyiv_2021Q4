@@ -1,0 +1,86 @@
+#!/bin/bash
+
+function getrange {
+  myip=`ifconfig | grep -m 1 inet | cut -d' ' -f10`
+  mask=`ifconfig | grep -m 1 inet | cut -d' ' -f13`
+
+  IFS=. read -r i1 i2 i3 i4 <<< "$myip"
+  IFS=. read -r m1 m2 m3 m4 <<< "$mask"
+
+  echo "my IP:     $myip"
+  echo "mask:      $mask"
+  echo "network:   $((i1 & m1)).$((i2 & m2)).$((i3 & m3)).$((i4 & m4))"
+  #echo "broadcast: $((i1 & m1 | 255-m1)).$((i2 & m2 | 255-m2)).$((i3 & m3 | 255-m3)).$((i4 & m4 | 255-m4))"
+  firstip=$((i1 & m1)).$((i2 & m2)).$((i3 & m3)).$(((i4 & m4)+1))
+  lastip=$((i1 & m1 | 255-m1)).$((i2 & m2 | 255-m2)).$((i3 & m3 | 255-m3)).$(((i4 & m4 | 255-m4)-1))
+  #echo "first IP:  $((i1 & m1)).$((i2 & m2)).$((i3 & m3)).$(((i4 & m4)+1))"
+  #echo "last IP:   $((i1 & m1 | 255-m1)).$((i2 & m2 | 255-m2)).$((i3 & m3 | 255-m3)).$(((i4 & m4 | 255-m4)-1))"
+}
+
+
+function pingip {
+  up=`ping -c 1 $1 >/dev/null`
+  if [ $? -eq 0 ]
+    then
+      echo "Host $1 is reachable"
+  fi
+}
+
+
+function testport {
+   if timeout --signal=9 2 telnet $1 $2 2>/dev/null | grep Connected > /dev/null
+    then
+      echo "Port $2 is opened"
+  fi
+}
+
+
+function netscan {
+  getrange
+  echo "first IP:  $firstip"
+  echo "last IP:   $lastip"
+  IFS=. read -r f1 f2 f3 f4 <<< "$firstip"
+  IFS=. read -r l1 l2 l3 l4 <<< "$lastip"
+
+  for x1 in $(seq $f1 $l1)
+    do
+      for x2 in $(seq $f2 $l2)
+        do
+          for x3 in $(seq $f3 $l3)
+            do
+              for x4 in $(seq $f4 $l4)
+                do
+                  pingip "$x1.$x2.$x3.$x4" &
+                done
+            done
+        done
+    done
+  wait
+}
+
+function oports {
+  for p in $(seq 120 500)
+    do
+      testport $1 $p &
+    done
+  wait
+}
+
+case "$1" in
+  "--all"    ) netscan ;;
+  "--target" ) {
+    if [[ $2 != "" ]]
+      then
+        oports $2
+      else
+        echo "Enter IP to test open ports. See 'script71 --help' for more details"
+    fi
+  } ;;
+  *   ) echo "One key expected. Possible keys:
+
+  --all    - key displays the IP addresses of all hosts in the current subnet.
+
+  --target - key displays a list of opened system TCP ports. Syntax: --target XXX.XXX.XXX.XXX,
+             where XXX.XXX.XXX.XXX is an IP address of host, which is checking for opened ports.
+             " ;;
+esac
