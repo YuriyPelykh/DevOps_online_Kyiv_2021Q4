@@ -1,0 +1,36 @@
+#!/bin/bash
+
+src=$1
+dst=$2
+
+log=$2/sync.log
+state=./.statefile
+
+farr=(`ls -l $src/ | awk '{print $9}' | tail -n +2`)
+
+for fname in ${farr[*]}
+  do
+    if grep $fname $state 1>/dev/null 2>/dev/null
+      then
+        if [ "`grep "$fname" $state | awk '{print $2}'`" != "`stat $src/$fname | grep Modify | awk '{print $2"-"$3}'`" ]
+          then
+            sed -i "s/`grep "$fname" $state | awk '{print $2}'`/`stat $src/$fname | grep Modify | awk '{print $2"-"$3}'`/g" $state
+            cp $src/$fname $dst/
+            echo "`date` - File was modified - $fname" >> $log
+        fi
+      else
+        echo "$fname `stat $src/$fname | grep Modify | awk '{print $2"-"$3}'`" >> $state
+        cp $src/$fname $dst/
+        echo "`date` - New file was added - $fname" >> $log
+    fi
+  done
+
+for dfname in `awk '{print $1}' $state`
+  do
+    if [ ! -e $src/$dfname ]
+      then
+        sed -i "/$dfname/d" $state
+        rm  $dst/$dfname
+        echo "`date` - File was removed - $fname" >> $log
+    fi
+  done

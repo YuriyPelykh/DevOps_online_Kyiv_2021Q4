@@ -1,0 +1,36 @@
+#!/bin/bash
+
+### Creation of working file for outputs and calculations:
+#work_file=./script72_out
+#if [ -e $work_file ]
+#  then
+#    cp /dev/null $work_file
+#  else
+#    touch $work_file
+#fi
+
+### Calculation from which IP the most amount of requests are there:
+echo "1. Most requests were from IP:"
+grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" $1 ./example_log.log | sort | uniq -c | sort -gr | head -n 1
+
+### The most requested page:
+echo "2. The most requested page:"
+awk '{print $7}' ./example_log.log | sort | uniq -c | sort -gr | head -n 1
+
+### How many requests were there from each ip?
+echo "3. Number of requests for each IP (output limited by 10 IP):"
+grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" $1 ./example_log.log | sort | uniq -c | sort -gr | head -n 10
+
+### What non-existent pages were clients referred to?
+echo "4. Clients referred to such non-existent pages (output limited by 10 items):"
+awk '{if ($9 == 404) {print "     " $9 " " $7}}' ./example_log.log | head -n 10
+
+### What time did site get the most requests?
+echo "5. Site got the most requests at:"
+awk '{print $4}' ./example_log.log | awk -F: '{print $2}' | sort | uniq -c | sort -gr | awk '{print "     " $2 ":00"}' | head -n 1
+
+### What search bots have accessed the site? (UA + IP).
+echo "6. Site has been accessed by following search bots:"
+awk '{print "     " $12 "\t\t" $1}' ./example_log.log | sed 's,",,g' | sort | uniq -w 15
+
+
