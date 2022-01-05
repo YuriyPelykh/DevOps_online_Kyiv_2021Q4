@@ -1,7 +1,7 @@
 # Task 8.1  Python
 
 1. Python 3.10.1 and Jupyter Notebooks were installed.  
-2. Practice in Jupyter Notebooks (testing **.ipynb**-file (Notebook-file) can be found in ![./py/](../py/)):  
+2. Practice in Jupyter Notebooks (testing **.ipynb**-file (Notebook-file) can be found in [./py/](./py/)):  
 
 **Numbers and variables examples:**  
 ![Screen1](./task_images/Screenshot_1.png)  
