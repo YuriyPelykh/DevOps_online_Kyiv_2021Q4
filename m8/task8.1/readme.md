@@ -21,3 +21,9 @@ Note: Method file.seek() in Python, moves pointer in the file.
 
 **Operating with list examples:**  
 ![Screen8](./task_images/Screenshot_8.png)  
+
+3. Script, which resolves a square equation (**solv_square_equation.py**), and unit tests for it's methods (**solv_square_equation_tests.py**) can be find at directory [./py/](./py/).  
+Result of script's work:  
+![Screen9](./task_images/Screenshot_9.png)  
+Performing of unit-tests:  
+![Screen10](./task_images/Screenshot_10.png)  
