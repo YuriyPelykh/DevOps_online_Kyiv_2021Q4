@@ -10,7 +10,7 @@ Practice of simple job creation in Jenkins:
 ### Case of "manual" deploy:  
 1. Simple job with output to the local file:  
 ![Screen4](./task_images/Screenshot_4.png)  
-2. Result:
+2. Result:  
 ![Screen5](./task_images/Screenshot_5.png)  
 3. Key generation:  
 ![Screen6](./task_images/Screenshot_6.png)  
@@ -18,7 +18,7 @@ Practice of simple job creation in Jenkins:
 ![Screen7](./task_images/Screenshot_7.png)  
 5. Public key copied:  
 ![Screen8](./task_images/Screenshot_8.png)  
-6. Setting folder rights on remote machine VM2:
+6. Setting folder rights on remote machine VM2:  
 ![Screen9](./task_images/Screenshot_9.png)  
 7.**id_rsa** key should be copied to the Jenkins' directory with a correct ownership:  
 ![Screen10](./task_images/Screenshot_10.png)  
@@ -29,9 +29,9 @@ Practice of simple job creation in Jenkins:
 ![Screen13](./task_images/Screenshot_13.png)  
 
 ### Pipeline Git-Jenkins-Deployment Server:  
-1. Key-pair generated:  
+1. Key-pair generated on a Jenkins' machine:  
 ![Screen14](./task_images/Screenshot_14.png)  
-![Screen14a](./task_images/Screenshot_14a.png)  
+![Screen14b](./task_images/Screenshot_14b.png)  
 2. GitHub key configuration:  
 ![Screen15](./task_images/Screenshot_15.png)  
 Connection test:  
@@ -47,15 +47,8 @@ Adding of credentials:
 ![Screen20](./task_images/Screenshot_20.png)  
 6. Index-file was created and pushed to the Git:  
 ![Screen22](./task_images/Screenshot_22.png)  
-7. Now build runs normally:  
+7. Now builds run normally:  
 ![Screen21](./task_images/Screenshot_21.png)  
 ![Screen23](./task_images/Screenshot_23.png)  
 8. Refreshed page on deploy server now looks like:  
 ![Screen24](./task_images/Screenshot_24.png)  
-
-
-
-
-
-
-[./py/](./py/)):  
