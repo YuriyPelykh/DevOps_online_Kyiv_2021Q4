@@ -78,18 +78,18 @@ Adding of credentials was made as in previous task with local Jenkins.
 ![Screen35](./task_images/Screenshot_35.png)  
 
 ### Jenkins installation commands on Ubuntu:
-**wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -**
-**sudo nano /etc/apt/sources.list**
-	**deb https://pkg.jenkins.io/debian-stable binary/**
-**sudo apt-get update**
-**java -version**
-**sudo apt-get install openjdk-11-jdk**
-**sudo apt-get install jenkins**
-**service jenkins status**
-**sudo cat /var/lib/jenkins/secrets/initialAdminPassword**
+**wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -**  
+**sudo nano /etc/apt/sources.list**  
+	**deb https://pkg.jenkins.io/debian-stable binary/**  
+**sudo apt-get update**  
+**java -version**  
+**sudo apt-get install openjdk-11-jdk**  
+**sudo apt-get install jenkins**  
+**service jenkins status**  
+**sudo cat /var/lib/jenkins/secrets/initialAdminPassword**  
 
 ### Jenkins deploy conditions:  
-1) We have to use -o StrictHostKeyChecking=no
-**scp -v -o StrictHostKeyChecking=no index.html ypelykh@192.168.101:/var/www/html**
-2) Wehave to copy id_rsa to **/var/lib/jenkins/.ssh**
-3)The **/var/lib/jenkins/.ssh** directory and files inside of it should be owned by **jenkins**
+1) We have to use -o StrictHostKeyChecking=no  
+**scp -v -o StrictHostKeyChecking=no index.html ypelykh@192.168.101:/var/www/html**  
+2) Wehave to copy id_rsa to **/var/lib/jenkins/.ssh**  
+3)The **/var/lib/jenkins/.ssh** directory and files inside of it should be owned by **jenkins**  
