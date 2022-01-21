@@ -1,5 +1,24 @@
 # Task 9.1 Jenkins  
 
+
+### Jenkins installation commands in Ubuntu:  
+**wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -**  
+**sudo nano /etc/apt/sources.list**  
+	**deb https://pkg.jenkins.io/debian-stable binary/**  
+**sudo apt-get update**  
+**java -version**  
+**sudo apt-get install openjdk-11-jdk**  
+**sudo apt-get install jenkins**  
+**service jenkins status**  
+**sudo cat /var/lib/jenkins/secrets/initialAdminPassword**  
+
+### Jenkins deploy conditions:  
+1) We have to use -o StrictHostKeyChecking=no  
+**scp -v -o StrictHostKeyChecking=no index.html ypelykh@192.168.101:/var/www/html**  
+2) Wehave to copy id_rsa to **/var/lib/jenkins/.ssh**  
+3)The **/var/lib/jenkins/.ssh** directory and files inside of it should be owned by **jenkins**  
+
+
 ## 1. Simple Jenkins job (lecture 1):  
 Practice of simple job creation in Jenkins:  
 ![Screen1](./task_images/Screenshot_1.png)  
@@ -77,19 +96,12 @@ Adding of credentials was made as in previous task with local Jenkins.
 9. Refreshed page on Deployment Server now looks like:  
 ![Screen35](./task_images/Screenshot_35.png)  
 
-### Jenkins installation commands on Ubuntu:
-**wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -**  
-**sudo nano /etc/apt/sources.list**  
-	**deb https://pkg.jenkins.io/debian-stable binary/**  
-**sudo apt-get update**  
-**java -version**  
-**sudo apt-get install openjdk-11-jdk**  
-**sudo apt-get install jenkins**  
-**service jenkins status**  
-**sudo cat /var/lib/jenkins/secrets/initialAdminPassword**  
-
-### Jenkins deploy conditions:  
-1) We have to use -o StrictHostKeyChecking=no  
-**scp -v -o StrictHostKeyChecking=no index.html ypelykh@192.168.101:/var/www/html**  
-2) Wehave to copy id_rsa to **/var/lib/jenkins/.ssh**  
-3)The **/var/lib/jenkins/.ssh** directory and files inside of it should be owned by **jenkins**  
+### Jenkins nodes (agents):  
+1. Instance EC2 Jenkins Agent was created, **jenkins** directory created, **openjdk-11-jdk** installed, pub key from Jenkins Server added to **authorized_keys** file.  
+![Screen36](./task_images/Screenshot_36.png)  
+2. Jenkins Node configuration:  
+![Screen37](./task_images/Screenshot_37.png)  
+![Screen38](./task_images/Screenshot_38.png)  
+3. Job performing and important note:  
+![Screen40](./task_images/Screenshot_40.png)  
+![Screen41](./task_images/Screenshot_41.png)  
