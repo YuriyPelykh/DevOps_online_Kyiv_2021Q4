@@ -19,7 +19,4 @@
 6. Terraform **destroy**:  
 ![Screen10](./task_images/Screenshot_10.png)  
 ![Screen11](./task_images/Screenshot_11.png)  
-
-9.
 ![Screen12](./task_images/Screenshot_12.png)  
-![Screen13](./task_images/Screenshot_13.png)  
