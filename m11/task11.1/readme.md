@@ -46,17 +46,17 @@
 
 
 
-Frequently used Docker commands:
-**$ docker ps [-a]**                        # list
-**$ docker stop $(docker ps -a -q)**        # stop all containers [you need stop before delete]
-**$ docker rm 0fd99ee0cb61**                # remove a single container
-**$ docker images -a**                      # list
-**$ docker rmi $(docker images -a -q)**     # remove all images
+Frequently used Docker commands:  
+**$ docker ps [-a]**                        # list  
+**$ docker stop $(docker ps -a -q)**        # stop all containers [you need stop before delete]  
+**$ docker rm 0fd99ee0cb61**                # remove a single container  
+**$ docker images -a**                      # list  
+**$ docker rmi $(docker images -a -q)**     # remove all images  
 
-**$ docker search tomcat**
-**$ docker pull tomcat**
-**$ docker search nginx**
-**$ docker pull nginx**
-**$ docker run -it -p 8889:8080 tomcat**
-**$ docker run -it -p 8888:80 nginx**
-**$ docker run -d -p 8890:80 nginx**
+**$ docker search tomcat**  
+**$ docker pull tomcat**  
+**$ docker search nginx**  
+**$ docker pull nginx**  
+**$ docker run -it -p 8889:8080 tomcat**  
+**$ docker run -it -p 8888:80 nginx**  
+**$ docker run -d -p 8890:80 nginx**  
