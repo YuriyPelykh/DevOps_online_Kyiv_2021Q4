@@ -27,3 +27,6 @@ https://registry.terraform.io/providers/hashicorp/aws/latest/docs/
 
 AWS CLI Installation:  
 https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+Spring-petclinic test fail with profile MySQL solution:
+https://github.com/spring-projects/spring-petclinic/issues/824
