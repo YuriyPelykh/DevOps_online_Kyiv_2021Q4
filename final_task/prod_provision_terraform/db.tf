@@ -9,21 +9,11 @@ resource "aws_db_instance" "db" {
   password = "petclinic"
   port = "3306"
   publicly_accessible = "false"
-  vpc_security_group_ids = [ aws_security_group.prod_sg.id ]
+  vpc_security_group_ids = [ aws_security_group.prod_db_sg.id ]
   skip_final_snapshot = true
 }
 
-
-#resource "aws_db_security_group" "db_sg" {
-#  name = "rds_sg"
-#
-#  ingress {
-#    cidr = "178.54.200.233/32"
-#    security_group_name = "sg-048f812377911a49c"
-#  }
-#}
-
 resource "aws_db_subnet_group" "prod_db_subnet" {
   name = "prod_db_subnet"
-  subnet_ids = [ aws_subnet.prod_subnet.id, aws_subnet.prod_subnet_1.id ]
+  subnet_ids = [ aws_subnet.prod_subnet_private_1.id, aws_subnet.prod_subnet_private_2.id ]
 }

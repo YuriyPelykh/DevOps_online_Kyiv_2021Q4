@@ -1,6 +1,6 @@
 echo "========== Making Ansible hosts file =========="
 ans_d=../../repository/ansible/dev
-echo "[dev_servers]" >> ./hosts
+echo "[dev_servers]" > ./hosts
 cat $ans_d/instance_ips | while read ip
 do
   echo "Ubuntu-$ip   ansible_host=$ip" >> ./hosts

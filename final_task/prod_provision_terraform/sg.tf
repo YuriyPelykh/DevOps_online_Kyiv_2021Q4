@@ -1,4 +1,5 @@
 resource "aws_security_group" "prod_sg" {
+  name = "prod_sg"
   vpc_id = aws_vpc.prod_vpc.id
 
   ingress {
@@ -24,5 +25,17 @@ resource "aws_security_group" "prod_sg" {
     protocol = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+}
 
+resource "aws_security_group" "prod_db_sg" {
+  name = "prod_db_sg"
+  vpc_id = aws_vpc.prod_vpc.id
+
+  ingress {
+    description = "Allow MySQL"
+    from_port = 3306
+    to_port = 3306
+    protocol = "tcp"
+    cidr_blocks = ["77.88.202.98/32", "178.54.200.233/32", "3.123.4.54/32", "172.16.0.0/16"]
+  }
 }

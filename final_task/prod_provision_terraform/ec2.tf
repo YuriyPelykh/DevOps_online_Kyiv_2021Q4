@@ -1,9 +1,9 @@
 resource "aws_instance" "prod" {
   count = 1
-  ami = "ami-04505e74c0741db8d"
+  ami = "ami-0d527b8c289b4af7f"
   instance_type = "t2.micro"
 
-  subnet_id = aws_subnet.prod_subnet.id
+  subnet_id = aws_subnet.prod_subnet_public.id
 
   vpc_security_group_ids = [ aws_security_group.prod_sg.id ]
 
@@ -11,21 +11,23 @@ resource "aws_instance" "prod" {
 
   depends_on = [ aws_db_instance.db ]
 
-  connection {
-    type = "ssh"
-    user = "${var.EC2_USER}"
-    private_key = "${file("${var.PRIVATE_KEY_PATH}")}"
-    host = self.public_ip
+  tags = {
+    Name = "Prod_Environment"
   }
 
-  provisioner "remote-exec" {
-      inline = [
-        "sudo -i"
-         "apt-get update",
-         "apt-get -y install openjdk-11-jre"
-      ]
-  }
+  #connection {
+  #  type = "ssh"
+  #  user = "${var.EC2_USER}"
+  #  private_key = "${file("${var.PRIVATE_KEY_PATH}")}"
+  #  host = self.public_ip
+  #}
 
+  #provisioner "remote-exec" {
+  #    inline = [
+  #       "sudo apt-get update",
+  #       "sudo apt-get -y install openjdk-11-jre-headless"
+  #    ]
+  #}
 }
 
 resource "aws_key_pair" "key_pair" {
