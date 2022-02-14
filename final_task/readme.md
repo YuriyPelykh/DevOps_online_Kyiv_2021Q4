@@ -12,11 +12,11 @@
   6. **sudo apt-get install jenkins**  
   7. **service jenkins status**  
   8. **sudo cat /var/lib/jenkins/secrets/initialAdminPassword**  
-3. Maven installed accordingly to instruction: https://maven.apache.org/install.html
-4. Because of unsuccessful Jenkins test job (detailed job's description will be later) ending due to lack of **t2.micro** computing resources, a separate build agent was configured on Home-PC virtual machine:  
+3. Maven installed accordingly to instruction: https://maven.apache.org/install.html  
+4. Because of unsuccessful Jenkins build job ending due to lack of **t2.micro**   computing resources, a separate Build Agent was configured on Home-PC virtual machine:  
 
 
-## Part 2. CI pipeline with GitHub Webhook and Maven jobs
+## Part 2. 
 
 ## Part 3. CI pipeline with Maven Integration plugin
 
