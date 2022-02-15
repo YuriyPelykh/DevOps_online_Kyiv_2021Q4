@@ -15,7 +15,7 @@
 4. Docker – services containerization on Dev/Test
 
 ## Integration
-![Screen](./task_images/Build_Artifact.drawio.png.png)  
+![Screen](./task_images/Build_Artifact.drawio.png)  
 Jenkins Build Agent was moved from Cloud to local PC for better productivity (than on t2.micro) and save costs.  
 
 Build_Artifact_Job  steps:  
@@ -122,39 +122,10 @@ In final project an automated conveyor of new code continuous integration and de
 Got acquaintance with main CI/CD tools and technologies, their  configuration and usage.  
 Were learned a principles of automated cloud infrastructure creation with Terraform, its’ configuration management with Ansible and got a practical experience of work with this tools.  
 
-
-
-
-
-
-
-
-
-
-
-
-![Screen](./task_images/Screenshot_21.png)  
-
-
-
-
-
-
-
-
-
-
-## Part 2.
-
-## Part 3. CI pipeline with Maven Integration plugin
-
-## Part 4. Infrastructure creation with Terraform  
-1. All Terraform documentation:  
+Sources:   
+1. Terraform documentation:  
 https://registry.terraform.io/providers/hashicorp/aws/latest/docs/  
-2.
-
-AWS CLI Installation:  
-https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
-
-Spring-petclinic test fail with profile MySQL solution:
-https://github.com/spring-projects/spring-petclinic/issues/824
+2. AWS CLI Installation:  
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html  
+3. Spring-petclinic test fail with profile MySQL solution:  
+https://github.com/spring-projects/spring-petclinic/issues/824  
